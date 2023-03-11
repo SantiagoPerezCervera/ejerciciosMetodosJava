@@ -60,6 +60,49 @@ public class miPrimeraClase {
 			System.out.println("No es bisiesto");
 		}
 	}
+
+	
+	static void palindromo(int numero) {
+	    String numeroStr = Integer.toString(numero);
+
+	    boolean esPalindromo = true;
+	    for (int i = 0; i < numeroStr.length() / 2; i++) {
+	        if (numeroStr.charAt(i) != numeroStr.charAt(numeroStr.length() - i - 1)) {
+	            esPalindromo = false;
+	            break;
+	        }
+	    }
+	    
+	    if (esPalindromo) {
+	        System.out.println(numero + " es un número palíndromo.");
+	    } else {
+	        System.out.println(numero + " no es un número palíndromo.");
+	    }
+	}
+	static void remover(String cadena) {
+	    String sinEspacio = cadena.replaceAll("\\s+", "");
+	    System.out.println(sinEspacio);
+	}
+	static void invertir(String cadena) {
+		
+	    String invertirCadena = "";
+	    for (int i = cadena.length() - 1; i >= 0; i--) {
+	        invertirCadena += cadena.charAt(i);
+	    }
+	    System.out.println("La cadena invertida es: " + invertirCadena);
+	    
+	}
+	
+	static void factorial(int n){
+	    int resultado = 1;
+	    if (n == 1) {
+	        resultado = 1;
+	    } else {
+	        factorial(n - 1);
+	        resultado = factorial(n - 1) * n ;
+	    }
+	    System.out.println("El factorial de " + n + " es " + resultado);
+	}
 	
 	public static void main(String[] args) {
 	
@@ -71,6 +114,11 @@ public class miPrimeraClase {
 		volumenCono(4,10);
 		areaCubo(5);
 		añoBisiesto(2020);
+		palindromo(70);
+		remover("Hola Mundo");
+		String cadena = "Hola";
+		invertir(cadena);
+		factorial(5);
 	}
 
 }
